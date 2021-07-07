@@ -16,6 +16,10 @@ Foodie Reviews is a django application that lets its users express their love an
 ### All Reviews
 ![Reviews](main_app/static/img/Allreviews.png)
 
+### Future Considerations
+* Give users an option to add images to their food reviews
+* Give a search option for reviews by Restaurant name
+
 ### Code Snippets
 
 ``` python
