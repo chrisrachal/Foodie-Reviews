@@ -9,8 +9,11 @@ Foodie Reviews is a django application that lets its users express their love an
 * Click the "Reviews" button at the top of the page to navigate to all reviews
 
 ## Screenshots
+![User](main_app/static/img/Userreviews.png)
+![Reviews](main_app/static/img/Allreviews.png)
 
 ### Code Snippets
+
 ``` python
 # Creation and Update of Reviews
 class PostCreate(CreateView):
