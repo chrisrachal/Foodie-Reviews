@@ -8,6 +8,7 @@ Foodie Reviews is a django application that lets its users express their love an
 * Congrats! You wrote your first restaurant review!
 * Click the "Reviews" button at the top of the page to navigate to all reviews
 
+## Screenshots
 
 ### Code Snippets
 ``` python
