@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Foodie Reviews</title>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css"> -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+  </head>
+  <body>
+        <header>
+         <div class="allinks">
+          {% if user.is_authenticated %}
+          <span><a class="links" href="{% url 'profile' user.username %}">Hello, {{ user.username }}!</a></span>
+          <span> | </span>
+          <span><a class="links" href="/posts/create">Add a New Review!</a></span>
+          <span> | </span>
+          <span><a class="links" href="{% url 'posts_index' %}">Reviews</a></span>
+          <span> | </span>
+          <span><a class="links" href="{% url 'logout' %}">Logout</a></span>
+      
+          {% else %}
+          <span><a class="links" href="{% url 'login' %}">Login</a></span>
+          <span> | </span>
+          <span><a class="links" href="{% url 'signup' %}">SignUp</a></span>
+          {% endif %}
+       </div>
+          <!-- <a href="/posts"> -->
+            <h1>Foodie Reviews</h1>
+        <!-- </a> -->
+        </header>
+        <hr />
+        {% block content %}
+            {% endblock %}
+      <footer>
+        All Rights Reserved, Foodie Reviews 2021
+      </footer>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="card-content">
+    <h3>{{ post.name }}</h3>
+<title>Foodie Reviews</title>
+
+<p>Location: {{ post.location }}</p>
+<p>Review: {{ post.review }}</p>
+<p>Rating: {{ post.rating }}</p>
+<div class="linkdiv">
+<a class="ulinks" href="{% url 'posts_update' post.id %}">Update Review</a> | 
+<a class="ulinks" href="{% url 'posts_delete' post.id %}">Delete This Review</a>
+</div>
+</div>
+{% endblock %} 

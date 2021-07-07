@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Foodie Reviews</title>
+  </head>
+  <body>
+
+    <!-- <a class="newreview" href="/posts/create">Add a New Review!</a>
+    <hr /> -->
+      <div class="hello">
+    {% for post in posts %}
+    <a href ="/posts/{{post.id}}">
+    <h3>Name: {{ post.name }}</h3>
+  </a>
+    <p>Location: {{ post.location }}</p>
+    <p>Review: {{ post.review }}</p>
+    <p>Rating: {{ post.rating }}</p>
+
+      <a href='/user/{{post.user.username}}'>
+        <p>Written By: {{post.user.username}}</p>
+      </a>
+      <hr />
+  {% endfor %}
+</div>
+  {% endblock %}
+    <footer>All Rights Reserved, Foodie Reviews 2021</footer>
+  </body>
+</html>

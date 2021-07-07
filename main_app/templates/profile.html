@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- <head>
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head> -->
+<h1 class="user">{{ username }}'s reviews</h1>
+<body>
+{% for post in posts %}
+<a href="/posts/{{ post.id }}">
+  <h3 class="names" >{{ post.name }}</h3>
+</a>
+<a href="/user/{{post.user.username}}">
+  <p class="prof">Reviewed By: {{post.user.username }}</p>
+</a>
+{% endfor %}
+{% endblock %}
+</body>
