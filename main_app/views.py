@@ -69,7 +69,6 @@ def posts_show(request, post_id):
 
 class PostCreate(CreateView):
   model = Post
-  # fields = '__all__'
   fields = ['name', 'location', 'review', 'rating']
   success_url = '/posts'
   
@@ -86,7 +85,6 @@ class PostUpdate(UpdateView):
   def form_valid(self, form):
     self.object = form.save(commit=False)
     self.object.save()
-    # return HttpResponseRedirect('/posts/' + str(self.object.pk))
     return HttpResponseRedirect('/posts/')
 
 @method_decorator(login_required, name='dispatch')

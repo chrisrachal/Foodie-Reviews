@@ -13,9 +13,11 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 from dotenv import load_dotenv, dotenv_values
+import dj_database_url
 load_dotenv()
 config = dotenv_values(".env")
 print('( config )', config)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,7 +31,9 @@ SECRET_KEY = 'ne#&d0*b%nkwkfqx2w_o=$bky+24*ztko10_m44c0bshy^%ojm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    
+]
 
 
 # Application definition
@@ -84,7 +88,8 @@ DATABASES = {
         'NAME': 'foods',
     }
 }
-
+# production database
+# DATABASES['default'] = dj_database_url.config()
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
